@@ -54,4 +54,52 @@ Parameters:
 a. are the weights the model learned during training
 b. are used by models to predict the next token in the sequence 
 
-c. 
+Transformers:
+---------------
+a. It ws introduced in language models in 2017.
+b. It is an architecture designed aroung the idea of attention.
+c. It processes longer sequences by paying attention on the most important part of input
+d. It also solves memory issues faced in the earlier models.
+f. It is the state-of-art architecture for a wide range of language model applications, such as translators.
+g. Full transformer consists of 
+    i.   an encoder - converts the input input text into an intermediate representation, and
+    ii.  a decoder - converts the intermediate representation into useful text.
+
+Self-attention:
+----------------
+a. Transformer mainly rely on the 'self-attention' concept
+b. The self 'self' part of the 'self-attention' refers to the 'egocentric'. i.e. it focuses on the each token of the input corpus.
+c. On behalf of each token of input, the 'self-attention' asks, 'What is the impact of every token of the imput matter to me'. 
+
+For example:
+--------------
+Consider the following sentence:
+
+I can not go outside the house because it is raining.
+
+The sentence contains 11 words. So each word is paying attention to the other 10 words. Then it evaluates the impact of these 10 words have on me. 
+For example, notice that the sentence contains the pronoun it. Pronouns are often ambiguous. The pronoun it always refers to a recent noun, but 
+in the example sentence, which recent noun does it refer to: the animal or the street?
+The self-attention mechanism determines the relevance of each nearby word to the pronoun it.
+
+
+What are the use cases of LLMs?
+--------------------------------
+a. LLMs are excellent in mimicking human speech patterns
+b. They are emergent abilities. LLMs can even solve some math problems and write code.
+c. LLMs can be components of models that do more than just generate text. 
+d. Recent LLMs have been used to build sentiment detectors, toxicity classifiers, and generate image captions.
+
+LLMs considerations. i.e. When to consider LLMs?
+-------------------------------------------------
+a. Large LLMs are expensive. They can take months to train, thus they consume large resources.
+b. Engineering challaenges arise because of the fact that that these LLMs are built upon large number of parameters ranging from BERT (110M Parameters) to PaLM (340B Parameters)
+   Special Infrastructure and Programming language are required to coordinate the flow of information to chips and back again.
+
+        Then the question is to how to mitigate theese costs of these LLMs
+        -------------------------------------------------------------------
+        There are two ways 
+            a. Offline interference 
+            b. Distillation
+c. Bias is another problem in LLMs and should be considered in training and deployment.
+d. When trained on human languages, these LLMs can introduce potential ethical issues such as misuse of language, and bias in race, gender, color, relion, etc.
